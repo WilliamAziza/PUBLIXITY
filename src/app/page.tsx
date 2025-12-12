@@ -10,8 +10,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('/Publixity.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-green-600 mb-6">
-              Publixity
+            <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent mb-6 animate-pulse">
+              WELCOME TO PUBLIXITY
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               Powerful bulk SMS platform for businesses. Reach thousands of customers instantly with our reliable messaging service.
