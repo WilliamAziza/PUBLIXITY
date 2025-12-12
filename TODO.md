@@ -1,0 +1,4 @@
+- [x] Change "Publixity" text in hero section to green
+- [x] Change button gradients to green
+- [x] Change CTA section background to green
+- [x] Update any other blue/purple colors to green

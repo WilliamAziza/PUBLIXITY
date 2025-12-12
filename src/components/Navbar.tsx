@@ -15,7 +15,7 @@ export default function Navbar() {
                 height={20}
                 className="rounded"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-green-600">
                 Publixity
               </span>
             </Link>
@@ -23,13 +23,13 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <Link
               href="/"
-              className="text-zinc-700 dark:text-zinc-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Home
             </Link>
             <Link
               href="/send-sms"
-              className="text-zinc-700 dark:text-zinc-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              className="text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Send SMS
             </Link>
