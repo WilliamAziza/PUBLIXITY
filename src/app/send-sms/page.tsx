@@ -131,10 +131,10 @@ export default function SendSMS() {
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black pt-16">
       <main className="w-full max-w-2xl p-8 bg-white dark:bg-black rounded-lg shadow-lg">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent mb-2">
             Send Bulk SMS
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 font-medium">
+          <p className="text-lg text-green-600 dark:text-green-300 font-medium">
             Reach your audience instantly
           </p>
         </div>
@@ -150,7 +150,7 @@ export default function SendSMS() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Enter your SMS message here..."
-              className="w-full h-32 p-3 border border-zinc-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-50"
+              className="w-full h-32 p-3 border border-zinc-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-50"
               required
             />
             <div className="mt-2 flex gap-2">
@@ -211,7 +211,7 @@ export default function SendSMS() {
             <button
               type="button"
               onClick={saveContactList}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
             >
               <Save className="w-4 h-4" />
               Save Contacts
@@ -242,7 +242,7 @@ export default function SendSMS() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full bg-green-600 text-white py-3 px-4 rounded-md hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {loading ? 'Sending...' : 'Send Bulk SMS'}
           </button>
