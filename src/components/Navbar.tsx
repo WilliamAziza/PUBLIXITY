@@ -17,6 +17,12 @@ export default function Navbar() {
             <Link href="/send-sms" className="text-zinc-700 dark:text-zinc-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
               Send SMS
             </Link>
+            <Link href="/auth/login" className="text-zinc-700 dark:text-zinc-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+              Login
+            </Link>
+            <Link href="/auth/signup" className="text-zinc-700 dark:text-zinc-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+              Signup
+            </Link>
           </div>
         </div>
       </div>
