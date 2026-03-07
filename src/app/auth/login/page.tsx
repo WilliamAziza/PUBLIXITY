@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { MessageSquare, AlertCircle } from 'lucide-react';
 
-export default function Login() {
+export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -124,3 +124,4 @@ export default function Login() {
     </div>
   );
 }
+

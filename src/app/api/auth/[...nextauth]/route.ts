@@ -1,7 +1,10 @@
-import NextAuth from 'next-auth';
+import NextAuth, { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import dbConnect from '@/lib/db';
+import User from '@/models/User';
+import bcrypt from 'bcryptjs';
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'credentials',
@@ -10,19 +13,29 @@ const handler = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // Here you would typically validate against your database
-        // For now, we'll use a simple check
-        if (
-          credentials?.email === 'user@example.com' &&
-          credentials?.password === 'password'
-        ) {
-          return {
-            id: '1',
-            email: 'user@example.com',
-            name: 'User',
-          };
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error('Invalid credentials');
         }
-        return null;
+
+        await dbConnect();
+
+        const user = await User.findOne({ email: credentials.email });
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        const isValid = await bcrypt.compare(credentials.password, user.password);
+
+        if (!isValid) {
+          throw new Error('Invalid password');
+        }
+
+        return {
+          id: user._id.toString(),
+          email: user.email,
+          name: user.name,
+        };
       },
     }),
   ],
@@ -32,6 +45,24 @@ const handler = NextAuth({
   session: {
     strategy: 'jwt',
   },
-});
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        (session.user as any).id = token.id;
+      }
+      return session;
+    },
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
+
