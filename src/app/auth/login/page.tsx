@@ -90,7 +90,6 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-          </div>
 
           {error && (
             <div className="rounded-md bg-red-50 dark:bg-red-900/20 p-4">
@@ -105,9 +104,7 @@ export default function LoginPage() {
                   <div className="mt-2 text-sm text-red-700 dark:text-red-300">
                     {error}
                   </div>
-                </div>
               </div>
-            </div>
           )}
 
           <div>
@@ -121,7 +118,5 @@ export default function LoginPage() {
           </div>
         </form>
       </div>
-    </div>
   );
 }
-
